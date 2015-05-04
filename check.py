@@ -32,28 +32,38 @@ try:
 
         # get data from page
         url = "http://bthomehub.home/index.cgi"
-        response =  urllib2.urlopen(url)
-        pagecontent = response.read().lower()
+        try:
+            response =  urllib2.urlopen(url)
+        except:
+            response = ""
 
-        # search for the devices.
-        for i in range(len(devicelist)):
+        if response == "":
+                # No good response from the router
+                f.write("Router didn't respond nicely"+"\n")
+                print("Router didn't respond nicely")
+        else:            
 
-            GPIO.setup(pinlist[i], GPIO.OUT)
+            pagecontent = response.read().lower()
 
-            if pagecontent.find(">" + devicelist[i] + "<")>0:
-                # if the device is found, turn on the corresponding LED
-                f.write(ownerlist[i] + " is here"+"\n")
-                print(ownerlist[i] + " is here")
-                GPIO.output(pinlist[i],True)
-            else:
-                # if the device is not found, turn on the corresponding LED
-                f.write(ownerlist[i] + " is not here"+"\n")
-                print(ownerlist[i] + " is not here")
-                GPIO.output(pinlist[i],False)
+            # search for the devices.
+            for i in range(len(devicelist)):
 
-        f.close
+                GPIO.setup(pinlist[i], GPIO.OUT)
 
-        time.sleep(10)
+                if pagecontent.find(">" + devicelist[i] + "<")>0:
+                    # if the device is found, turn on the corresponding LED
+                    f.write(ownerlist[i] + " is here"+"\n")
+                    print(ownerlist[i] + " is here")
+                    GPIO.output(pinlist[i],True)
+                else:
+                    # if the device is not found, turn on the corresponding LED
+                    f.write(ownerlist[i] + " is not here"+"\n")
+                    print(ownerlist[i] + " is not here")
+                    GPIO.output(pinlist[i],False)
+
+            f.close
+
+        time.sleep(15)
 
 except:
     print 'Unexpected error:', sys.exc_info()[0]
