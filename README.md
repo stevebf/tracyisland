@@ -36,7 +36,7 @@ The VNC Server is now working, but I have to log on to the RPi as "root".  The p
 
 Problem where the boot sequence said the device hadn't been shutdown problem: www.raspberrypi.org/forums/viewtopic.php?p=495156 (post by rtek1000).
 
-## 05/4/2014
+## 05/4/2015
 
 Soldered everything into place.
 
@@ -44,3 +44,8 @@ Soldered everything into place.
 * Pin 16 (Steve) = GPIO23 - green wire
 * Pin 18 (Sarah) = GPIO24 - orange wire
 * Pin 22 (Davy) = GPIO25 - yellow wire
+
+## 4/5/2015
+
+Rewrote script to  run once on startup instead of running a single instance every 20 seconds
+
