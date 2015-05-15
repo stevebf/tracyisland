@@ -32,4 +32,6 @@ Now create a cron job to run the script, in the background, at startup:
 - Arrow down to the end and add the line “@reboot python /home/pi/tracyisland/check.py &” (no quotes).  The & at the end tells it to run in the background.
 - Save with “CTRL-X”, then “Y” and finally “Return”.
 
+If you find the Pi drops the wifi from time to time, set up a crontab to check the network adaptor.  Details of how to do this are at http://weworkweplay.com/play/rebooting-the-raspberry-pi-when-it-loses-wireless-connection-wifi/.  Note that the BT Home Hub's address is 192.168.1.254.
+
  
