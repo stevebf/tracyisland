@@ -25,10 +25,10 @@ try:
 
     while True:
         # this is a file to which we'll write the output for debugging
-        f = open('/home/pi/tracyisland/connecteddevices.txt', 'w')
-        now = datetime.datetime.now()
-        f.write(str(now)+"\n")
-        print(now)
+	# currently commented out to prevent to many writes to the SD card
+        # f = open('/home/pi/tracyisland/connecteddevices.txt', 'w')
+        # now = datetime.datetime.now()
+        # f.write(str(now)+"\n")
 
         # get data from page
         url = "http://bthomehub.home/index.cgi"
@@ -39,7 +39,8 @@ try:
 
         if response == "":
                 # No good response from the router
-                f.write("Router didn't respond nicely"+"\n")
+                # f.write("Router didn't respond nicely"+"\n")
+	        print(now)
                 print("Router didn't respond nicely")
         else:            
 
@@ -52,16 +53,16 @@ try:
 
                 if pagecontent.find(">" + devicelist[i] + "<")>0:
                     # if the device is found, turn on the corresponding LED
-                    f.write(ownerlist[i] + " is here"+"\n")
-                    print(ownerlist[i] + " is here")
+                    # f.write(ownerlist[i] + " is here"+"\n")
+                    # print(ownerlist[i] + " is here")
                     GPIO.output(pinlist[i],True)
                 else:
                     # if the device is not found, turn on the corresponding LED
-                    f.write(ownerlist[i] + " is not here"+"\n")
-                    print(ownerlist[i] + " is not here")
+                    # f.write(ownerlist[i] + " is not here"+"\n")
+                    # print(ownerlist[i] + " is not here")
                     GPIO.output(pinlist[i],False)
 
-            f.close
+            # f.close
 
         time.sleep(15)
 
