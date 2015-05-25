@@ -1,4 +1,4 @@
-Format the entire volume using Disk Utility.
+Format the entire volume using Disk Utility on the mac.
 - Run Disk Utility
 - Select the Card Reader on the left-hand side
 - Select the Erase tab
@@ -33,6 +33,6 @@ Now create a cron job to run the script, in the background, at startup:
 - Add the line "0 15 * * * /sbin/shutdown -r now" to make the Pi reboot at 3am each morning. This is because the wifi dongle randomly goes down after a couple of days
 - Save with “CTRL-X”, then “Y” and finally “Return”.
 
-If you find the Pi drops the wifi from time to time, set up a crontab to check the network adaptor.  Details of how to do this are at http://weworkweplay.com/play/rebooting-the-raspberry-pi-when-it-loses-wireless-connection-wifi/.  Note that the BT Home Hub's address is 192.168.1.254.
+(The Pi drops the wifi from time to time. I did try to set up a crontab to check the network adaptor using the details at http://weworkweplay.com/play/rebooting-the-raspberry-pi-when-it-loses-wireless-connection-wifi/, but it didn't work.  If you revisit this, note that the BT Home Hub's address is 192.168.1.254.)
 
  
