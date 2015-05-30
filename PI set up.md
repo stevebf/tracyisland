@@ -72,6 +72,11 @@ You can push committed changes to github with
 
     git push origin master
     
+You can catch up with any changes in the github repo with
+
+    git checkout master
+    git pull
+    
 # Creating a Cron Jon
     
 Now create a cron job to run the script, in the background, at startup:
