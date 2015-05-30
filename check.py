@@ -4,6 +4,8 @@
 # to the network.  If a device is connected, turn on its LED.  If not, turn
 # off its LED.
 
+# this comment is just to check that GIT is working
+
 import urllib2
 import RPi.GPIO as GPIO
 import datetime
