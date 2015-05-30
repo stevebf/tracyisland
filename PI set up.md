@@ -1,3 +1,5 @@
+# Installing
+
 Format the entire volume using Disk Utility on the mac.
 - Run Disk Utility
 - Select the Card Reader on the left-hand side
