@@ -23,7 +23,25 @@ When install has finished, the PI runs the config program raspi-config.  You’l
 - Enable Boot to Desktop
 - set Internationalisation options (timezone and keyboard)
 
-Create the folder /home/pi/tracyisland
+# Git
+
+Install git by typing
+
+    sudo apt-get install git
+
+Then set your identity by typing
+
+    git config --global user.name "YOURNAME"
+    git config --global user.email youremailaddress (I'm using gmail)
+
+In the folder /home/pi, type
+
+    git init
+
+and then
+
+    git clone https://github.com/stevebf/tracyisland
+
 
 Put the script check.py in this folder.
 
