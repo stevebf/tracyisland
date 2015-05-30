@@ -27,7 +27,7 @@ try:
         # this is a file to which we'll write the output for debugging
 	# currently commented out to prevent to many writes to the SD card
         # f = open('/home/pi/tracyisland/connecteddevices.txt', 'w')
-        # now = datetime.datetime.now()
+        now = datetime.datetime.now()
         # f.write(str(now)+"\n")
 
         # get data from page
